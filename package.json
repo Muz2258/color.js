@@ -1,0 +1,23 @@
+{
+	"name": "color.js",
+	"version": "1.0.0",
+	"description": " A simple js library to manipulate colors",
+	"source": "index.html",
+	"scripts": {
+		"serve": "parcel"
+	},
+	"keywords": [
+		"color converter",
+		"color variant",
+		"generator",
+		"color",
+		"js library",
+		"js",
+		"library"
+	],
+	"author": "Emamuzo Okerri",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.11.0"
+	}
+}
