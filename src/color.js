@@ -2,4 +2,4 @@
 
 import { hexToRgb } from "./converters";
 
-hexToRgb();
+console.log(hexToRgb("#2256ab"));
