@@ -1,3 +1,3 @@
 "use strict";
 
-import { hexToRgb, rgbToHex, rgbToHsl } from "./converters";
+import { hexToRgb, rgbToHex, rgbToHsl, hslToRgb } from "./converters";
