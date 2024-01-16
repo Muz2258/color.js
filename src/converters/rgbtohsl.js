@@ -14,7 +14,7 @@ const convertRgbToHsl = function (arr) {
 	} else {
 		const d = maxVal - minVal;
 
-		s = l > 0.5 ? d / (2 - maxVal - minVal) : d / (maxVal - minVal);
+		s = l > 0.5 ? d / (2 - maxVal - minVal) : d / (maxVal + minVal);
 
 		switch (maxVal) {
 			case r:
