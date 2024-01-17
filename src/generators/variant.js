@@ -3,6 +3,7 @@
  * - Take into consideration data types for base color parameter
  * - Include additional options for:
  * - - Defining the output color space and format
+ * - Include error handling
  */
 
 "use strict";
@@ -21,8 +22,8 @@ const generateVariant = function (base, options) {
 	s = options.saturation || 100;
 	l = options.lightness || 50;
 	i = options.inputType || null;
-	o = options.outputType || null;
-	f = options.outputFormat || "hex";
+	o = options.outputType || "hex";
+	f = options.outputFormat || "string";
 
 	if (typeof base === "string") {
 		if (base.includes("rgb")) {
@@ -44,15 +45,28 @@ const generateVariant = function (base, options) {
 			rgb = hexToRgb(base);
 			hsl = rgbToHsl(rgb);
 		}
-	} else {
-		console.log(typeof base);
+	} else if (Array.isArray(base) && i !== null) {
+		if (i === "rgb") {
+			hsl = rgbToHsl(base);
+		}
+		if (i === "hsl") {
+			hsl = base;
+		}
 	}
 
 	hsl[1] = s;
 	hsl[2] = l;
 
 	newRgb = hslToRgb(hsl);
-	output = rgbToHex(newRgb);
+
+	if (f === "string") {
+		if (o === "rgb") output = "rgb(" + newRgb[0] + ", " + newRgb[1] + ", " + newRgb[2] + ")";
+		if (o === "hsl") output = "hsl(" + hsl[0] + ", " + hsl[1] + "%, " + hsl[2] + "%)";
+		if (o === "hex") output = rgbToHex(newRgb).toUpperCase();
+	} else if (f === "array") {
+		if (o === "rgb") output = newRgb;
+		if (o === "hsl") output = hsl;
+	}
 
 	return output;
 };
