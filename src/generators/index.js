@@ -1,3 +1,3 @@
 "use strict";
 
-export { default as hexVariant } from "./hexvariant";
+export { default as generateVariant } from "./variant";
