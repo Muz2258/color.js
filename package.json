@@ -2,9 +2,10 @@
 	"name": "color.js",
 	"version": "1.0.0",
 	"description": " A simple js library to manipulate colors",
-	"source": "index.html",
+	"source": "src/color.js",
 	"scripts": {
-		"serve": "parcel"
+		"serve": "parcel index.html --dist-dir test",
+		"build": "parcel build --dist-dir dist"
 	},
 	"keywords": [
 		"color converter",
