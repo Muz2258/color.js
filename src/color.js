@@ -19,4 +19,10 @@ TODO:
 import { hexToRgb, hexToHsl, rgbToHex, rgbToHsl, hslToRgb, hslToHex } from "./converters";
 import { generateVariant } from "./generators";
 
-console.log(generateVariant([35, 66, 72], { saturation: 98, lightness: 88, inputType: "rgb" }));
+const options = {
+	saturation: 68,
+	lightness: 50,
+	inputType: "rgb",
+	outputType: "rgb",
+};
+console.log(generateVariant([35, 66, 72], options));

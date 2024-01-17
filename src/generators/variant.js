@@ -1,8 +1,5 @@
 /*
  * TODO:
- * - Take into consideration data types for base color parameter
- * - Include additional options for:
- * - - Defining the output color space and format
  * - Include error handling
  */
 
@@ -14,7 +11,7 @@ import { rgbToHsl, hexToRgb, hslToRgb, rgbToHex } from "../converters";
  * Description: A function that generates color variants based on a specified color
  * @param {String, Array} base The base color
  * @param {Object} options An object of characteristics for the color variant
- * @returns
+ * @returns A new color in the specified color space and format
  */
 const generateVariant = function (base, options) {
 	let s, l, i, o, f, rgb, newRgb, output, hsl;
