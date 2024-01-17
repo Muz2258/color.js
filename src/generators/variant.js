@@ -16,35 +16,45 @@ import { rgbToHsl, hexToRgb, hslToRgb, rgbToHex } from "../converters";
  * @returns
  */
 const generateVariant = function (base, options) {
-	let variant, rgb, hsl, newRgb;
+	let s, l, i, o, f, rgb, newRgb, output, hsl;
 
-	if (base.includes("rgb")) {
-		rgb = base
-			.split("(")[1]
-			.split(")")[0]
-			.split(", ")
-			.map((n) => parseInt(n));
-		hsl = rgbToHsl(rgb);
-	}
-	if (base.includes("hsl")) {
-		hsl = base
-			.split("(")[1]
-			.split(")")[0]
-			.split(", ")
-			.map((c, i) => (i === 0 ? c / 360 : c.slice(0, 1) / 100));
-	}
-	if (base.includes("#")) {
-		rgb = hexToRgb(base);
-		hsl = rgbToHsl(rgb);
+	s = options.saturation || 100;
+	l = options.lightness || 50;
+	i = options.inputType || null;
+	o = options.outputType || null;
+	f = options.outputFormat || "hex";
+
+	if (typeof base === "string") {
+		if (base.includes("rgb")) {
+			rgb = base
+				.split("(")[1]
+				.split(")")[0]
+				.split(", ")
+				.map((n) => parseInt(n));
+			hsl = rgbToHsl(rgb);
+		}
+		if (base.includes("hsl")) {
+			hsl = base
+				.split("(")[1]
+				.split(")")[0]
+				.split(", ")
+				.map((c, i) => (i === 0 ? c : c.split("%")[0]));
+		}
+		if (base.includes("#")) {
+			rgb = hexToRgb(base);
+			hsl = rgbToHsl(rgb);
+		}
+	} else {
+		console.log(typeof base);
 	}
 
-	hsl[1] = options.saturation;
-	hsl[2] = options.lightness;
+	hsl[1] = s;
+	hsl[2] = l;
 
 	newRgb = hslToRgb(hsl);
-	variant = rgbToHex(newRgb);
+	output = rgbToHex(newRgb);
 
-	return variant;
+	return output;
 };
 
 export default generateVariant;

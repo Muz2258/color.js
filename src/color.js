@@ -18,3 +18,5 @@ TODO:
 
 import { hexToRgb, hexToHsl, rgbToHex, rgbToHsl, hslToRgb, hslToHex } from "./converters";
 import { generateVariant } from "./generators";
+
+generateVariant("hsl(338, 100%, 57%)", { saturation: 98, lightness: 88 });
