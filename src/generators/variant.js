@@ -14,7 +14,7 @@ import { rgbToHsl, hexToRgb, hslToRgb, rgbToHex } from "../converters";
  * @returns A new color in the specified color space and format
  */
 const generateVariant = function (base, options) {
-	let s, l, i, o, f, rgb, newRgb, output, hsl;
+	let s, l, i, o, f, rgb, newRgb, hsl, output;
 
 	s = options.saturation || 100;
 	l = options.lightness || 50;
