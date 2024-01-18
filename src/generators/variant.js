@@ -5,7 +5,10 @@
 
 "use strict";
 
-import { rgbToHsl, hexToRgb, hslToRgb, rgbToHex } from "../converters";
+import { default as rgbToHsl } from "../converters/rgbtohsl";
+import { default as rgbToHex } from "../converters/rgbtohex";
+import { default as hexToRgb } from "../converters/hextorgb";
+import { default as hslToRgb } from "../converters/hsltorgb";
 
 /**
  * Description: A function that generates color variants based on a specified color

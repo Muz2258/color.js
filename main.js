@@ -1,6 +1,7 @@
 "use strict";
 
-import { generateVariant } from "./src/color";
+// import { generateVariant } from "./src/color";
+import { generateVariant } from "./dist/color.cjs";
 
 const options = {
 	saturation: 80,

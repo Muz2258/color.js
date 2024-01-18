@@ -1,6 +1,7 @@
 "use strict";
 
-import { hexToRgb, rgbToHsl } from ".";
+import { default as hexToRgb } from "./hextorgb";
+import { default as rgbToHsl } from "./rgbtohsl";
 
 const convertHextoHsl = function (hex) {
 	debugger;

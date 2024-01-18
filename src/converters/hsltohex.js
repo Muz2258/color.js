@@ -1,6 +1,7 @@
 "use strict";
 
-import { hslToRgb, rgbToHex } from ".";
+import { default as hslToRgb } from "./hsltorgb";
+import { default as rgbToHex } from "./rgbtohex";
 
 const convertHslToHex = function (arr) {
 	const rgb = hslToRgb(arr);

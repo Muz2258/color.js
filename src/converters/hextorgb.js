@@ -1,6 +1,6 @@
 "use strict";
 
-const fromHexToRgb = function (hex) {
+const convertHexToRgb = function (hex) {
 	const noHash = hex.slice(1);
 
 	const r = parseInt(noHash.slice(0, 2), 16);
@@ -10,4 +10,4 @@ const fromHexToRgb = function (hex) {
 	return [r, g, b];
 };
 
-export default fromHexToRgb;
+export default convertHexToRgb;
