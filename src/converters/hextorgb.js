@@ -1,5 +1,15 @@
 "use strict";
 
+/*
+ * TODO:
+ * Allow option to select output format - String or array
+ */
+
+/**
+ * Converts the HEX value of a color to its RGB equivalent
+ * @param {String} hex The hexadecimal value of a color in RGB color space
+ * @returns The RGB value of same color
+ */
 const convertHexToRgb = function (hex) {
 	const noHash = hex.slice(1);
 
