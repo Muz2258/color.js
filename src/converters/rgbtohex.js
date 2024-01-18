@@ -1,5 +1,15 @@
 "use strict";
 
+/*
+ * TODO:
+ * Allow strings to be passed as value parameter
+ */
+
+/**
+ *
+ * @param {Array, String} arr The RGB value of the color to be converted
+ * @returns The HEX value of the same color
+ */
 const convertRgbToHex = function (arr) {
 	const [r, g, b] = [...arr];
 
