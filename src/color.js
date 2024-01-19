@@ -3,6 +3,9 @@ TODO:
 * List of modules to be developed
 * - Generators
 * - - Random color generator
+* Write tests for all functions
+* Delete html entry and update all branches.
+* Change Library name
 */
 
 "use strict";

@@ -1,8 +1,5 @@
 # Directories to ignore
 node_modules
-.parcel-cache
-test
-dist
 
 # Files to ignore
 package-lock.json
