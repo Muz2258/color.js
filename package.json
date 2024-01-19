@@ -1,10 +1,10 @@
 {
 	"name": "color.js",
 	"version": "1.0.0",
-	"description": " A simple js library to manipulate colors",
-	"source": "index.html",
+	"description": "A simple js library to convert colors between color spaces and generate color variants of a specified color",
+	"main": "index.html",
 	"scripts": {
-		"serve": "parcel"
+		"build": "rollup --config --bundleConfigAsCjs"
 	},
 	"keywords": [
 		"color converter",
@@ -18,6 +18,7 @@
 	"author": "Emamuzo Okerri",
 	"license": "ISC",
 	"devDependencies": {
-		"parcel": "^2.11.0"
+		"rollup": "^4.9.5",
+		"rollup-plugin-cleanup": "^3.2.1"
 	}
 }
