@@ -1,15 +1,9 @@
-/*
- * TODO:
- * - Include error handling
- */
-
 "use strict";
 
 import { default as rgbToHsl } from "../converters/rgbtohsl.js";
 import { default as rgbToHex } from "../converters/rgbtohex.js";
 import { default as hexToRgb } from "../converters/hextorgb.js";
 import { default as hslToRgb } from "../converters/hsltorgb.js";
-import { throwStatement } from "@babel/types";
 
 /**
  * Description: A function that generates color variants based on a specified color
