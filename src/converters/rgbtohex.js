@@ -1,17 +1,19 @@
 "use strict";
-
-/*
- * TODO:
- * Allow strings to be passed as value parameter
- */
-
 /**
- *
+ * Converts an RGB color value to a HEX color value
  * @param {Array, String} arr The RGB value of the color to be converted
  * @returns The HEX value of the same color
  */
-const convertRgbToHex = function (arr) {
-	const [r, g, b] = [...arr];
+const convertRgbToHex = function (val) {
+	let r, g, b;
+
+	if (typeof val === "string")
+		[r, g, b] = val
+			.split("(")[1]
+			.split(")")[0]
+			.split(", ")
+			.map((v) => parseInt(v));
+	else if (Array.isArray(val)) [r, g, b] = [...val];
 
 	const rHex = r.toString(16).toUpperCase();
 	const gHex = g.toString(16).toUpperCase();
