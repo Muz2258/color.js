@@ -15,7 +15,11 @@ describe("convert color from rgb to hsl", () => {
 		expect(rgbToHsl(rgbArr)).toEqual(hslStr);
 	});
 
-	test("test 2: input as string and output as array", () => {
+	test("test 3: input as string and output as array", () => {
+		expect(rgbToHsl(rgbStr)).toEqual(hslArr);
+	});
+
+	test("test 4: input and output as string", () => {
 		expect(rgbToHsl(rgbStr)).toEqual(hslArr);
 	});
 });
