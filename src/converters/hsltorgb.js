@@ -1,11 +1,4 @@
 "use strict";
-
-/*
- * TODO:
- * Allow string as accepted parameter
- * Allow option to select the ouput format - Array or String
- */
-
 /**
  * Converts a color from HSL color space to RGB color space
  * @param {Array} arr The HSL value of the color to be converted
