@@ -19,8 +19,6 @@ describe("Properly generate color variant in different output formats", () => {
 		};
 
 		expect(generateVariant(iHexStr, options)).toBe(oHexStr);
-
-		options.variantColorSpace = "rgb";
 	});
 
 	test("test 2: get output from rgb array", () => {
