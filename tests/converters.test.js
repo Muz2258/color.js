@@ -1,12 +1,12 @@
 import { hexToHsl, hexToRgb, rgbToHex, rgbToHsl, hslToHex, hslToRgb } from "../src/color";
 
 const hexStr = "#DA4953",
-	hexStr2 = "#186460",
+	hexStr2 = "#18635F",
 	rgbStr = "RGB(218, 73, 83)",
-	rgbStr2 = "RGB(24, 100, 96)",
+	rgbStr2 = "RGB(24, 99, 95)",
 	rgbStr3 = "RGB(100, 75, 210)",
 	rgbArr = [218, 73, 83],
-	rgbArr2 = [24, 100, 96],
+	rgbArr2 = [24, 99, 95],
 	rgbArr3 = [100, 75, 210],
 	hslStr = "HSL(356, 66%, 57%)",
 	hslStr2 = "HSL(177, 61%, 24%)",
@@ -48,5 +48,31 @@ describe("convert color from rgb to hex", () => {
 
 	test("test 2: input as string", () => {
 		expect(rgbToHex(rgbStr)).toBe(hexStr);
+	});
+});
+
+describe("convert color from hsl to rgb", () => {
+	test("test 1: input and output as array", () => {
+		expect(hslToRgb(hslArr)).toEqual(rgbArr);
+		expect(hslToRgb(hslArr2)).toEqual(rgbArr2);
+		expect(hslToRgb(hslArr3)).toEqual(rgbArr3);
+	});
+
+	test("test 2: input as array and output as string", () => {
+		expect(hslToRgb(hslArr, "string")).toBe(rgbStr);
+		expect(hslToRgb(hslArr2, "string")).toBe(rgbStr2);
+		expect(hslToRgb(hslArr3, "string")).toBe(rgbStr3);
+	});
+
+	test("test 3: input as string and output as array", () => {
+		expect(hslToRgb(hslStr)).toEqual(rgbArr);
+		expect(hslToRgb(hslStr2)).toEqual(rgbArr2);
+		expect(hslToRgb(hslStr3)).toEqual(rgbArr3);
+	});
+
+	test("test 3: input and output as string", () => {
+		expect(hslToRgb(hslStr, "string")).toBe(rgbStr);
+		expect(hslToRgb(hslStr2, "string")).toBe(rgbStr2);
+		expect(hslToRgb(hslStr3, "string")).toBe(rgbStr3);
 	});
 });
