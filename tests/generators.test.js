@@ -20,24 +20,24 @@ describe("Properly generate color variant in different output formats", () => {
 
 		expect(generateVariant(iHexStr, options)).toBe(oHexStr);
 
-		options.outputType = "rgb";
+		options.variantColorSpace = "rgb";
 	});
 
 	test("test 2: get output from rgb array", () => {
 		const options = {
 			saturation: 31,
 			lightness: 87,
-			inputType: "rgb",
+			baseColorSpace: "rgb",
 		};
 
 		expect(generateVariant(iRgbArr, options)).toBe(oHexStr);
 	});
 
-	test("test 3: get outpu from hsl array", () => {
+	test("test 3: get output from hsl array", () => {
 		const options = {
 			saturation: 31,
 			lightness: 87,
-			inputType: "hsl",
+			baseColorSpace: "hsl",
 		};
 
 		expect(generateVariant(iHslArr, options)).toBe(oHexStr);
@@ -65,7 +65,7 @@ describe("Properly generate color variant in different output formats", () => {
 		const options = {
 			saturation: 31,
 			lightness: 87,
-			outputType: "rgb",
+			variantColorSpace: "rgb",
 		};
 
 		expect(generateVariant(iHexStr, options)).toBe(oRgbStr);
@@ -75,7 +75,7 @@ describe("Properly generate color variant in different output formats", () => {
 		const options = {
 			saturation: 31,
 			lightness: 87,
-			outputType: "hsl",
+			variantColorSpace: "hsl",
 		};
 
 		expect(generateVariant(iHexStr, options)).toBe(oHslStr);
@@ -85,8 +85,8 @@ describe("Properly generate color variant in different output formats", () => {
 		const options = {
 			saturation: 31,
 			lightness: 87,
-			outputType: "rgb",
-			outputFormat: "array",
+			variantColorSpace: "rgb",
+			variantFormat: "array",
 		};
 
 		expect(generateVariant(iHexStr, options)).toEqual(oRgbArr);
@@ -96,8 +96,8 @@ describe("Properly generate color variant in different output formats", () => {
 		const options = {
 			saturation: 31,
 			lightness: 87,
-			outputType: "hsl",
-			outputFormat: "array",
+			variantColorSpace: "hsl",
+			variantFormat: "array",
 		};
 
 		expect(generateVariant(iHexStr, options)).toEqual(oHslArr);
