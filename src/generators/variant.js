@@ -87,7 +87,7 @@ const generateVariant = function (base, options) {
 
 		if (f === "array" && o === "hex") {
 			throw syntErr(
-				"You shouldn't set the 'variantFormat' property to 'array' while the 'variantColorSpace' property is not set (the default value is 'hex' and hex value a only outputted as strings)"
+				"You shouldn't set the 'variantFormat' property to 'array' while the 'variantColorSpace' property is not set (the default value is 'hex' and hex values are only outputted as strings)"
 			);
 		} else if (f === "array") {
 			if (o === "rgb") output = newRgb;
