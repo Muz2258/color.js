@@ -11,9 +11,16 @@
  * @param {Array} arr The HSL value of the color to be converted
  * @returns The samd color in RGB color space
  */
-const convertHslToRgb = function (arr) {
-	let [h, s, l] = [...arr];
-	let r, g, b, r_, g_, b_;
+const convertHslToRgb = function (val, f = "array") {
+	let h, s, l, r, g, b, r_, g_, b_;
+
+	if (typeof val === "string")
+		[h, s, l] = val
+			.split("(")[1]
+			.split(")")[0]
+			.split(", ")
+			.map((v) => parseInt(v));
+	if (Array.isArray(val)) [h, s, l] = [...val];
 
 	s = s / 100;
 	l = l / 100;
@@ -35,7 +42,8 @@ const convertHslToRgb = function (arr) {
 	g = Math.round((g_ + m) * 255);
 	b = Math.round((b_ + m) * 255);
 
-	return [r, g, b];
+	if (f === "string") return `RGB(${r}, ${g}, ${b})`;
+	else return [r, g, b];
 };
 
 export default convertHslToRgb;
