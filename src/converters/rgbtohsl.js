@@ -1,18 +1,26 @@
-"use strict";
-
 /*
  * TODO:
  * Allow passing strings as color value parameter
  * Allow option to select output format - String or Array
  */
 
+"use strict";
+
 /**
  * Convert a color from RGB color space to HSL color space
  * @param {Array, String} arr The RGB value of the color to be converted
  * @returns The HSL value of the same color
  */
-const convertRgbToHsl = function (arr) {
-	const [r, g, b] = arr.map((v) => (v /= 255));
+const convertRgbToHsl = function (val) {
+	let r, g, b;
+
+	if (Array.isArray(val)) [r, g, b] = val.map((v) => v / 255);
+	if (typeof val === "string")
+		[r, g, b] = val
+			.split("(")[1]
+			.split(")")[0]
+			.split(",")
+			.map((v) => v / 255);
 
 	const minVal = Math.min(r, g, b);
 	const maxVal = Math.max(r, g, b);
