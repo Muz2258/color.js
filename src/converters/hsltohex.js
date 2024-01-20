@@ -1,7 +1,7 @@
 "use strict";
 
-import { default as hslToRgb } from "./hsltorgb";
-import { default as rgbToHex } from "./rgbtohex";
+import { default as hslToRgb } from "./hsltorgb.js";
+import { default as rgbToHex } from "./rgbtohex.js";
 
 /*
  * TODO:

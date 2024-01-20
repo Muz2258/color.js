@@ -1,7 +1,7 @@
 "use strict";
 
-import { default as hexToRgb } from "./hextorgb";
-import { default as rgbToHsl } from "./rgbtohsl";
+import { default as hexToRgb } from "./hextorgb.js";
+import { default as rgbToHsl } from "./rgbtohsl.js";
 
 /**
  * A function that converts a color value from HEX to HSL

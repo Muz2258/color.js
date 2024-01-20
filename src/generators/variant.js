@@ -5,10 +5,10 @@
 
 "use strict";
 
-import { default as rgbToHsl } from "../converters/rgbtohsl";
-import { default as rgbToHex } from "../converters/rgbtohex";
-import { default as hexToRgb } from "../converters/hextorgb";
-import { default as hslToRgb } from "../converters/hsltorgb";
+import { default as rgbToHsl } from "../converters/rgbtohsl.js";
+import { default as rgbToHex } from "../converters/rgbtohex.js";
+import { default as hexToRgb } from "../converters/hextorgb.js";
+import { default as hslToRgb } from "../converters/hsltorgb.js";
 
 /**
  * Description: A function that generates color variants based on a specified color
@@ -26,7 +26,7 @@ const generateVariant = function (base, options) {
 	f = options.outputFormat || "string";
 
 	if (typeof base === "string") {
-		if (base.includes("rgb")) {
+		if (base.includes("rgb") || base.includes("RGB")) {
 			rgb = base
 				.split("(")[1]
 				.split(")")[0]
@@ -34,7 +34,7 @@ const generateVariant = function (base, options) {
 				.map((n) => parseInt(n));
 			hsl = rgbToHsl(rgb);
 		}
-		if (base.includes("hsl")) {
+		if (base.includes("hsl") || base.includes("HSL")) {
 			hsl = base
 				.split("(")[1]
 				.split(")")[0]
@@ -60,8 +60,8 @@ const generateVariant = function (base, options) {
 	newRgb = hslToRgb(hsl);
 
 	if (f === "string") {
-		if (o === "rgb") output = "rgb(" + newRgb[0] + ", " + newRgb[1] + ", " + newRgb[2] + ")";
-		if (o === "hsl") output = "hsl(" + hsl[0] + ", " + hsl[1] + "%, " + hsl[2] + "%)";
+		if (o === "rgb") output = "RGB(" + newRgb[0] + ", " + newRgb[1] + ", " + newRgb[2] + ")";
+		if (o === "hsl") output = "HSL(" + hsl[0] + ", " + hsl[1] + "%, " + hsl[2] + "%)";
 		if (o === "hex") output = rgbToHex(newRgb).toUpperCase();
 	} else if (f === "array") {
 		if (o === "rgb") output = newRgb;
