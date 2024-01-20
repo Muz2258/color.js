@@ -40,3 +40,13 @@ describe("convert color from rgb to hsl", () => {
 		expect(rgbToHsl(rgbStr3, "string")).toBe(hslStr3);
 	});
 });
+
+describe("convert color from rgb to hex", () => {
+	test("test 1: input as array", () => {
+		expect(rgbToHex(rgbArr)).toBe(hexStr);
+	});
+
+	test("test 2: input as string", () => {
+		expect(rgbToHex(rgbStr)).toBe(hexStr);
+	});
+});
