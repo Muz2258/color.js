@@ -1,4 +1,4 @@
-import info from "./package.json" assert { type: "json" };
+import info from "./package.json";
 import cleanup from "rollup-plugin-cleanup";
 
 let banner = `/*\n* - ${info.name} v${info.version}\n* - ${info.description}\n*\n* - Copyright ${

@@ -13,9 +13,9 @@
 const convertRgbToHex = function (arr) {
 	const [r, g, b] = [...arr];
 
-	const rHex = r.toString(16);
-	const gHex = g.toString(16);
-	const bHex = b.toString(16);
+	const rHex = r.toString(16).toUpperCase();
+	const gHex = g.toString(16).toUpperCase();
+	const bHex = b.toString(16).toUpperCase();
 
 	return "#" + rHex + gHex + bHex;
 };
