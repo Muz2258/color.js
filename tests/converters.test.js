@@ -96,3 +96,13 @@ describe("convert color from hex to rgb", () => {
 		expect(hexToRgb(hexStr, "string")).toBe(rgbStr);
 	});
 });
+
+describe("convert color from hex to hsl", () => {
+	test("test 1: output as array", () => {
+		expect(hexToHsl(hexStr)).toEqual(hslArr);
+	});
+
+	test("test 2: output as string", () => {
+		expect(hexToHsl(hexStr, "string")).toBe(hslStr);
+	});
+});
