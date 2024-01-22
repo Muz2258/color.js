@@ -4,5 +4,4 @@ coverage
 .vscode
 
 # Files to ignore
-package-lock.json
 debug.js
