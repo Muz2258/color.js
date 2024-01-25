@@ -1,21 +1,23 @@
 name: CD Workflow
 
 on:
-  push:
-    branches:
-      production
+    push:
+        branches: production
 
 jobs:
-  build-project:
-    name: Build project for publishing
-    runs-on: ubuntu-latest
+    build-project:
+        name: Build project for publishing
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - name: Install packages
-        run: npm ci
+            - name: Setup node
+              uses: actions/setup-node@v3
 
-      - name: Build project
-        run: npm run build
+            - name: Install packages
+              run: npm ci
+
+            - name: Build project
+              run: npm run build
